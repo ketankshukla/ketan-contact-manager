@@ -10,6 +10,10 @@ class Contact extends Component {
     this.setState({ showContactInfo: !this.state.showContactInfo });
   };
 
+  onDeleteClick = e => {
+    console.log('clicked')
+  }
+
   render() {
     const { name, email, phone } = this.props.contact;
     const { showContactInfo } = this.state;
@@ -18,10 +22,16 @@ class Contact extends Component {
         {showContactInfo ? (
           <React.Fragment>
             <h4>
-              {name}{' '}
+              {name}
               <i
                 onClick={this.onShowClick}
                 className="fa fa-angle-double-down"
+                style={{ cursor: 'pointer' }}
+              />
+              <i
+              onClick={this.onDeleteClick}
+                className="fas fa-times"
+                style={{ cursor: 'pointer', float: 'right', color: 'red' }}
               />
             </h4>
             <ul className="list-group">
@@ -31,10 +41,16 @@ class Contact extends Component {
           </React.Fragment>
         ) : (
           <h4>
-            {name}{' '}
+            {name}
             <i
               onClick={this.onShowClick}
               className="fa fa-angle-double-right"
+              style={{ cursor: 'pointer' }}
+            />
+            <i
+                onClick={this.onDeleteClick}
+              className="fas fa-times"
+              style={{ cursor: 'pointer', float: 'right', color: 'red' }}
             />
           </h4>
         )}
