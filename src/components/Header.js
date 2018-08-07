@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 const Header = (props) => {
   const {branding} = props
@@ -25,7 +25,7 @@ Header.defaultProps = {
   branding: 'Contact Manager'
 }
 
-Header.PropTypes = {
+Header.propTypes = {
   branding: PropTypes.string.required
 }
 
