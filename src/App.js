@@ -9,8 +9,11 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Contact name="John Doe" email="jdoe@gmail.com" phone="555-5555"/>
-        <Contact name="Karen Smith" email="ksmith@gmail.com" phone="222-2222" />
+        <div className="container">
+          <Contact name="John Doe" email="jdoe@gmail.com" phone="555-5555" />
+          <Contact name="Karen Smith" email="ksmith@gmail.com" phone="222-2222" />
+        </div>
+       
       </div>
     );
   }
