@@ -11,7 +11,7 @@ class Contact extends Component {
   };
 
   onDeleteClick = e => {
-    console.log('clicked');
+    this.props.deleteClickHandler();
   };
 
   render() {
@@ -23,7 +23,11 @@ class Contact extends Component {
           {name}
           <i
             onClick={this.onShowClick}
-            className={showContactInfo ? "fa fa-angle-double-down" : "fa fa-angle-double-right"}
+            className={
+              showContactInfo
+                ? 'fa fa-angle-double-down'
+                : 'fa fa-angle-double-right'
+            }
             style={{ cursor: 'pointer' }}
           />
           <i
@@ -45,7 +49,8 @@ class Contact extends Component {
 }
 
 Contact.propTypes = {
-  contact: PropTypes.object.isRequired
+  contact: PropTypes.object.isRequired,
+  deleteClickHandler: PropTypes.func.isRequired
 };
 
 export default Contact;
