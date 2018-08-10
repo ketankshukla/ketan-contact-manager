@@ -50,6 +50,12 @@ class AddContact extends Component {
       phone: '',
       errors: {}
     });
+
+    //once the form is submitted, we want to be redirected to the home page
+    //notice the page is not being refreshed, we're simply being sent to another page
+    // if the page were to be refreshed then we would lose the contacts we added.
+    this.props.history.push('/')
+
   };
 
   render() {
